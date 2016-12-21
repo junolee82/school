@@ -37,3 +37,4 @@ set name='°øÀ¯', email='ky@test.co.kr',dob='1977-09-07'
 where stud_id=2;
 
 delete from student where stud_id=3;
+
