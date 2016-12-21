@@ -11,19 +11,6 @@ public class ConnectionFactory {
 		return ins.createConnection();
 	}
 
-	private Connection createConnection() {
-		Connection connection = null;
-		String url = "jdbc:mysql://localhost:3306/mybatis";
-		String user = "root";
-		String password = "rootroot";
-		try {
-			connection = DriverManager.getConnection(url, user, password);
-		} catch (SQLException e) {
-			System.err.printf("Error : Unable to Connection DataBase");
-		}
-		return connection;
-	}
-
 	private ConnectionFactory() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -31,6 +18,19 @@ public class ConnectionFactory {
 			System.err.printf("MYSQL Driver not Found!!");
 			System.exit(-1);
 		}
+	}
+
+	private Connection createConnection() {
+		Connection connection = null;
+		String url = "jdbc:mysql://localhost:3306/school";
+		String user = "user_school";
+		String password = "rootroot";
+		try {
+			connection = DriverManager.getConnection(url, user, password);
+		} catch (SQLException e) {
+			System.err.printf("Error : Unable to Connection DataBase");
+		}
+		return connection;
 	}
 
 }
